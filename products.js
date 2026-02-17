@@ -30,7 +30,7 @@ function setActiveButton(activeBtn) {
 
    //LOAD ALL PRODUCTS
 
-   
+
 function loadAllProducts(btn = null) {
   fetch("https://fakestoreapi.com/products")
     .then(res => res.json())
@@ -40,9 +40,8 @@ function loadAllProducts(btn = null) {
     });
 }
 
-/* =========================
-   LOAD CATEGORIES
-========================= */
+   //LOAD CATEGORIES
+
 fetch("https://fakestoreapi.com/products/categories")
   .then(res => res.json())
   .then(categories => {
@@ -69,18 +68,17 @@ fetch("https://fakestoreapi.com/products/categories")
     });
   });
 
-/* =========================
-   LOAD PRODUCTS BY CATEGORY
-========================= */
+  // LOAD PRODUCTS BY CATEGORY
+
 function loadProductsByCategory(category) {
   fetch(`https://fakestoreapi.com/products/category/${category}`)
     .then(res => res.json())
     .then(products => displayProducts(products));
 }
 
-/* =========================
-   DISPLAY PRODUCTS
-========================= */
+   //DISPLAY PRODUCTS
+
+
 function displayProducts(products) {
   productContainer.innerHTML = "";
 
@@ -118,6 +116,7 @@ function displayProducts(products) {
     `;
 
     // Events (BEST PRACTICE)
+
     card.querySelector(".details-btn").addEventListener("click", () => {
       openModal(product.id);
     });
@@ -163,7 +162,5 @@ function addToCartFromModal() {
   }
 }
 
-/* =========================
-   INITIAL LOAD
-========================= */
+
 loadAllProducts();
