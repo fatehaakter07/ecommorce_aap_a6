@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>E-Commerce Application Design</title>
+<!-- font awesome add -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- tailwind $ daisy ui adding
+  -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- inter font adding
+  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
+<!-- stylesheet add -->
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-base-100 px-6 shadow-sm">
+  <!-- Left: Logo -->
+  <div class="navbar-start">
+    <a class="text-2xl font-bold text-primary">SwiftCart</a>
+  </div>
+
+  <!-- Center: Desktop Menu -->
+  <div class="navbar-center hidden text-4xl font-bold lg:flex">
+    <ul class="menu menu-horizontal gap-4">
+      <li><a  href="./index.html">Home</a></li>
+      <li><a class="text-primary font-medium" >Products</a></li>
+      <li><a >About</a></li>
+      <li><a >Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Right: Icons -->
+  <div class="navbar-end gap-2">
+    <!-- Cart Icon -->
+    <button class="btn btn-ghost btn-circle">
+         <i class="fa-solid fa-cart-shopping text-xl"></i>
+
+      
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="dropdown dropdown-end lg:hidden">
+      <label tabindex="0" class="btn btn-ghost btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </label>
+
+      <ul tabindex="0"
+        class="menu menu-sm dropdown-content mt-3 p-3 shadow bg-base-100 rounded-box w-40">
+        <li><a class="text-primary" href="./index.html">Home</a></li>
+        <li><a href="./products.html">Products</a></li>
+        <li><a>About</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    </header>
+
+
+
+      <section class="  w-11/12 mx-auto">
+    <h2 class=" text-4xl font-bold mb-8 text-center">
+      Our Products
+    </h2>
+
+    <div id="product-containers" class="flex gap-5 flex-wrap justify-center">
+
+    </div>
+
+  </section>
+<script src="./products.js"></script>
+</body>
+</html>
