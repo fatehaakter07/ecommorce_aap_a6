@@ -1,27 +1,27 @@
-// const loadAllProducts = async () => {
-//     const url ="https://fakestoreapi.com/products";
-//     fetch(url)
-//     .then(res => res.json())
-//     .then(data => displayProducts(data));
-
-// }
-
-const loadProductCatagory =  (category) => {
-
-    const url = `https://fakestoreapi.com/products/categories`;
+const loadAllProducts = async () => {
+    const url ="https://fakestoreapi.com/products";
     fetch(url)
     .then(res => res.json())
-    .then(data => displayProductCatagory(data));
+    .then(data => displayProducts(data));
 
 }
 
-const displayProductCatagory = (products) => {
+const loadProductCategory =  (category) => {
+
+    const url = `https://fakestoreapi.com/products/category/${category}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayProductCategory(data));
+
+}
+
+const displayProductCategory = (products) => {
     const productContainer = document.getElementById("product-containers");
     productContainer.innerHTML = "";    
     for (const product of products) {
         const productDiv = document.createElement("div");
         productDiv.innerHTML = ` <button id ="product-btn-${product.id}" 
-                                  onclick =  "loadProductCatagory('${product.category}') 
+                                  onclick =  "loadProductCategory('${product.category}') 
                           " class="btn btn-outline btn-primary lesson-btn"> 
                             ${product.category} </button>`;
         productContainer.appendChild(productDiv);
@@ -29,26 +29,26 @@ const displayProductCatagory = (products) => {
 }
 
 
-// const displayProducts = (products) => {  
+const displayProducts = (products) => {  
     
-//             const productContainer = document.getElementById("product-containers");
-//                   productContainer.innerHTML = "";
+            const productContainer = document.getElementById("product-containers");
+                  productContainer.innerHTML = "";
 
-//             for (const product of products) {
+            for (const product of products) {
 
-//              const productDiv = document.createElement("div");
+             const productDiv = document.createElement("div");
 
-//               productDiv.innerHTML = ` <button id ="product-btn-${product.id}" 
-//                                         onclick =  "loadProductCatagory('${product.category}') 
-//                                 " class="btn btn-outline btn-primary lesson-btn">
-//                                  ${product.category} </button>`;
+              productDiv.innerHTML = ` <button id ="product-btn-${product.id}" 
+                                        onclick =  "loadProductCategory('${product.category}') 
+                                " class="btn btn-outline btn-primary lesson-btn">
+                                 ${product.category} </button>`;
 
-//               productContainer.appendChild(productDiv);
+              productContainer.appendChild(productDiv);
     
-//              }
-//  }
+             }
+ }
             
 
 
 
-// loadAllProducts();
+loadAllProducts();
