@@ -2,6 +2,8 @@ const categoryContainer = document.getElementById("categoryContainer");
 const productContainer = document.getElementById("productContainer");
 
 // Modal elements
+
+
 const modal = document.getElementById("productModal");
 const modalImage = document.getElementById("modalImage");
 const modalTitle = document.getElementById("modalTitle");
@@ -11,9 +13,9 @@ const modalRating = document.getElementById("modalRating");
 
 let selectedProduct = null;
 
-/* =========================
-   CATEGORY BUTTON HANDLER
-========================= */
+   //CATEGORY BUTTON HANDLER
+
+
 function setActiveButton(activeBtn) {
   const buttons = categoryContainer.querySelectorAll("button");
 
@@ -26,9 +28,9 @@ function setActiveButton(activeBtn) {
   activeBtn.classList.add("btn-primary");
 }
 
-/* =========================
-   LOAD ALL PRODUCTS
-========================= */
+   //LOAD ALL PRODUCTS
+
+   
 function loadAllProducts(btn = null) {
   fetch("https://fakestoreapi.com/products")
     .then(res => res.json())
@@ -128,9 +130,8 @@ function displayProducts(products) {
   });
 }
 
-/* =========================
-   MODAL OPEN
-========================= */
+   //MODAL OPEN
+
 function openModal(id) {
   fetch(`https://fakestoreapi.com/products/${id}`)
     .then(res => res.json())
@@ -147,9 +148,7 @@ function openModal(id) {
     });
 }
 
-/* =========================
-   CART LOGIC
-========================= */
+   //CART LOGIC
 function addToCart(product) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push(product);
